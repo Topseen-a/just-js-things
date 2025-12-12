@@ -9,7 +9,6 @@ for (let count = 1; count < number; count++){
         sum += count;
         }
 }
-
 if (sum == number){
     console.log(number,"is a perfect number");
     }
