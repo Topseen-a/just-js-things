@@ -8,7 +8,6 @@ let lcm = numberOne;
 if (numberTwo > lcm){
     lcm = numberTwo
     }
-
 while (true){
     if (lcm % numberOne == 0 && lcm % numberTwo == 0){
         break;
