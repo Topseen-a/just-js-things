@@ -17,8 +17,6 @@ import java.util.Scanner;
                     gcd = count;
                 }    
             }
-
         System.out.println("GCD is: " + gcd);
         }
-
     }
