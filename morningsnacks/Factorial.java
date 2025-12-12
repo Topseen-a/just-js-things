@@ -14,12 +14,5 @@ import java.util.Scanner;
         }
 
         System.out.println("The factorial is: " + factorial);
-
-
     }
-
-
-
-
-
 }
