@@ -9,6 +9,5 @@ public class LeapYearCount{
         }
     }
     System.out.println("Number of leap years that exist is: " + count);
-
     }
 }
