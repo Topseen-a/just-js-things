@@ -67,10 +67,12 @@ for (let day = 1; day <= 12; day++) {
         case 2:
             console.log("Two turtle doves,");
         case 1:
-            if (day == 1)
+            if (day == 1){
                 console.log("A partridge in a pear tree.");
-            else
+            }
+            else {
                 console.log("And a partridge in a pear tree.");
+            }
             break;
     }
 
