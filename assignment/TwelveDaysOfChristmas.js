@@ -3,18 +3,42 @@ for (let day = 1; day <= 12; day++) {
     process.stdout.write("On the ");
 
     switch (day) {
-        case 1:  process.stdout.write("first"); break;
-        case 2:  process.stdout.write("second"); break;
-        case 3:  process.stdout.write("third"); break;
-        case 4:  process.stdout.write("fourth"); break;
-        case 5:  process.stdout.write("fifth"); break;
-        case 6:  process.stdout.write("sixth"); break;
-        case 7:  process.stdout.write("seventh"); break;
-        case 8:  process.stdout.write("eighth"); break;
-        case 9:  process.stdout.write("ninth"); break;
-        case 10: process.stdout.write("tenth"); break;
-        case 11: process.stdout.write("eleventh"); break;
-        case 12: process.stdout.write("twelfth"); break;
+        case 1:  
+            process.stdout.write("first"); 
+            break;
+        case 2:  
+            process.stdout.write("second"); 
+            break;
+        case 3:  
+            process.stdout.write("third"); 
+            break;
+        case 4:  
+            process.stdout.write("fourth"); 
+            break;
+        case 5:  
+            process.stdout.write("fifth"); 
+            break;
+        case 6:  
+            process.stdout.write("sixth"); 
+            break;
+        case 7:  
+            process.stdout.write("seventh"); 
+            break;
+        case 8:  
+            process.stdout.write("eighth"); 
+            break;
+        case 9:  
+            process.stdout.write("ninth"); 
+            break;
+        case 10: 
+            process.stdout.write("tenth"); 
+            break;
+        case 11: 
+            process.stdout.write("eleventh"); 
+            break;
+        case 12: 
+            process.stdout.write("twelfth"); 
+            break;
     }
 
     console.log(" day of Christmas, my true love sent to me:");
