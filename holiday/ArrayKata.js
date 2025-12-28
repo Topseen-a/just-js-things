@@ -65,5 +65,42 @@ function maximumAndMinimumOf(array){
     return newArray;
 }
 
+function noOfOddNumbers(array){
+    counter = 0;
+    for (let count = 0; count < array.length; count++){
+        if (array[count] % 2 != 0){
+            counter++;    
+        }
+    }
+    return counter;
+}
 
+function noOfEvenNumbers(array){
+    counter = 0;
+    for (let count = 0; count < array.length; count++){
+        if (array[count] % 2 == 0){
+            counter++;
+        }
+    }
+    return counter;
+}
+
+function evenNumbersIn(array){
+    let evenCount = 0;
+    for (let count = 0; count < array.length; count++){
+        if (array[count] % 2 == 0){
+            evenCount++;
+        }
+    }
+    
+    let newArray = [evenCount];
+    let index = 0;
+    for (let count = 0; count < array.length; count++){
+        if (array[count] % 2 == 0){
+            newArray[index] = array[count];
+            index++;
+        } 
+    }
+    return newArray;
+}
 
