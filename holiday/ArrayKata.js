@@ -123,3 +123,11 @@ function oddNumbersIn(array){
     return newArray;
 }
 
+function squareNumbersIn(array){
+    let newArray = [array.length];
+    for (let count = 0; count < array.length; count++){
+        let square = array[count] * array[count];
+        newArray[count] = square;
+    }
+    return newArray;
+}
