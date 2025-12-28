@@ -104,3 +104,22 @@ function evenNumbersIn(array){
     return newArray;
 }
 
+function oddNumbersIn(array){
+    let oddCount = 0;
+    for (let count = 0; count < array.length; count++){
+        if (array[count] % 2 != 0){
+            oddCount++;
+        }
+    }
+
+    let newArray = [oddCount];
+    let index = 0;
+    for (let count = 0; count < array.length; count++){
+        if (array[count] % 2 != 0){
+            newArray[index] = array[count];
+            index++;
+        }
+    }
+    return newArray;
+}
+
