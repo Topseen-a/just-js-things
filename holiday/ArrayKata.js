@@ -4,9 +4,20 @@ function maximumIn(array){
     let maximum = array[0];
     for (let count = 0; count < array.length; count++){
         if (array[count] > maximum){
-            maximum = array[count]        
+            maximum = array[count];       
         }
     }
     return maximum;
 }
-console.log(maximumIn(array));
+
+function minimumIn(array){
+    let minimum = array[0];
+    for (let count = 0; count < array.length; count++){
+        if (array[count] < minimum){
+            minimum = array[count];
+        }
+    }
+    return minimum;
+}
+console.log(minimumIn(array));
+
