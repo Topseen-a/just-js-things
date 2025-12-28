@@ -19,5 +19,23 @@ function minimumIn(array){
     }
     return minimum;
 }
-console.log(minimumIn(array));
+
+function sumOf(array){
+    let sum = 0;
+    for (let count = 0; count < array.length; count++){
+        sum += array[count];
+    }
+    return sum;
+}
+
+function sumOfEvenNumbersIn(array){
+    let sum = 0;
+    for (let count = 0; count < array.length; count++){
+        if (array[count] % 2 == 0){
+            sum += array[count];
+        }
+    }
+    return sum;
+}
+
 
