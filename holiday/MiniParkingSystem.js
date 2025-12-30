@@ -49,7 +49,6 @@ while (true){
 
         case 3:
             console.log("\nParking status:");
-
             for (let count = 0; count < parkingSlot.length; count++) {
                 let status = "";
                 if (parkingSlot[count] === 0) {
