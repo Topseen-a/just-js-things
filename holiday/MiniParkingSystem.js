@@ -23,7 +23,7 @@ while (true){
             if (slotChoice < 1 || slotChoice > 20){
                 console.log("Invalid choice");
             } 
-            else if (parkingSlot[slotChoice - 1] === 1){
+            else if (parkingSlot[slotChoice - 1] == 1){
                 console.log("Slot already occupied");
             } 
             else {
@@ -38,7 +38,7 @@ while (true){
             if (removeSlotNumber < 1 || removeSlotNumber > 20){
                 console.log("Invalid choice");
             } 
-            else if (parkingSlot[removeSlotNumber - 1] === 0){
+            else if (parkingSlot[removeSlotNumber - 1] == 0){
                 console.log("Slot already empty");
             } 
             else {
@@ -51,7 +51,7 @@ while (true){
             console.log("\nParking status:");
             for (let count = 0; count < parkingSlot.length; count++) {
                 let status = "";
-                if (parkingSlot[count] === 0) {
+                if (parkingSlot[count] == 0) {
                     status = "Empty";
                 } 
                 else {
