@@ -4,9 +4,10 @@ let parkingSlot = new Array(20).fill(0);
 
 while (true){
     console.log("Welcome to Mini Parking System.\n");
-    console.log("1. Choose a slot to park your car");
-    console.log("2. Remove your car from the slot");
-    console.log("3. Display parking status");
+    console.log("1. Park car automatically")
+    console.log("2. Choose a slot to park your car");
+    console.log("3. Remove your car from the slot");
+    console.log("4. Display parking status");
     console.log("0. Exit the app\n");
 
     let choice = parseInt(prompt("Choose an option: "));
@@ -18,6 +19,22 @@ while (true){
 
     switch (choice){
         case 1:
+            let index;
+            for (index = 0; index < parkingSlot.length; index++){
+                if (parkingSlot[index] == 0){
+                    parkingSlot[index] = 1;
+                    console.log("Your car is parked at slot " + (index + 1));
+                    break;
+                }
+            }
+
+            if (index == parkingSlot.length){
+                System.out.println("Parking lot is full");
+            }
+            console.log();
+            break;
+
+        case 2:
             let slotChoice = parseInt(prompt("Enter a slot to park from (1-20): "));
 
             if (slotChoice < 1 || slotChoice > 20){
@@ -32,7 +49,7 @@ while (true){
             }
             break;
 
-        case 2:
+        case 3:
             let removeSlotNumber = parseInt(prompt("Enter the slot number to remove your car: "));
 
             if (removeSlotNumber < 1 || removeSlotNumber > 20){
@@ -47,7 +64,7 @@ while (true){
             }
             break;
 
-        case 3:
+        case 4:
             console.log("\nParking status:");
             for (let count = 0; count < parkingSlot.length; count++) {
                 let status = "";
