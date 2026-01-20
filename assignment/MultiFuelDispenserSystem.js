@@ -52,55 +52,77 @@ function buyFuel(){
     }
 
     let index = fuelChoice - 1;
-    let fuelName = fuelNames[index];
+    let fuel = fuelNames[index];
     let price = fuelPrice[index];
 
-    let methodOfBuyingFuel = prompt("Litres or Amount? ");
+    let methodOfBuyingFuel = getBuyingMethod();
 
     let litres = 0;
     let amount = 0;
 
     if (methodOfBuyingFuel.toLowerCase() === "litres"){
-        while (true){
-            litres = parseInt(prompt("How many litres of fuel are you buying? "));
-
-            if (litres >= 1 && litres <= 50){
-                break;
-            }
-            else {
-                console.log("Litres must be between 1-50");
-            }
-        }
-
-        amount = litres * price;
-
-    }
+        litres = getValidLitres();
+        amount = calculateAmount(litres, price);
+    } 
     else if (methodOfBuyingFuel.toLowerCase() === "amount"){
-        while (true){
-            amount = parseInt(prompt("How much are you buying? "));
-
-            if (amount >= price){
-                break;
-            }
-            else {
-                console.log("Amount must be more than litre price");
-            }           
-        }
-
-        litres = Math.floor(amount / price);
+        amount = getValidAmount(price);
+        litres = calculateLitres(amount, price);
     }
     else {
         console.log("Invalid input");
         return;
     }
 
-    saveTransaction(fuelName, litres, amount);
-    showTransactionHistory();
+    saveTransaction(fuel, litres, amount);
+    printReceipt(fuel, litres, amount);
+}
+
+function getBuyingMethod(){
+    let method = prompt("Litres or Amount? ");
+    return method;
+}
+
+function getValidLitres(){
+    let litres;
+    while (true){
+        litres = parseFloat(prompt("How many litres of fuel are you buying? "));
+        if (litres >= 1 && litres <= 50){
+            break;
+        }
+        else {
+            console.log("Litres must be between 1-50");
+        }
+    }
+    return litres;
+}
+
+function getValidAmount(price){
+    let amount;
+    while (true){
+        amount = parseFloat(prompt("How much are you buying? "));
+        if (amount >= price){
+            break;
+        }
+        else {
+            console.log("Amount must be more than litre price");
+        }
+    }
+    return amount;
+}
+
+function calculateAmount(litres, price){
+    let amount = litres * price
+    return amount;
+}
+
+function calculateLitres(amount, price){
+    let litres = amount / price;
+    return litres;
 }
 
 function saveTransaction(fuel, litres, amount){
     if (transactionCount >= fuelHistory.length){
-        console.log("Transaction history full!");
+        console.log("Transaction history full");
         return;
     }
 
@@ -113,13 +135,22 @@ function saveTransaction(fuel, litres, amount){
     console.log("Saving transaction history...\n");
 }
 
+function printReceipt(fuel, litres, amount){
+    console.log("Customer's Transaction Receipt");
+    console.log("===========================================");
+    console.log("Product: " + fuel);
+    console.log("Amount: #" + amount);
+    console.log("Litres: " + litres + "L");
+    console.log("Thank you for your patronage");
+    console.log("===========================================\n");
+}
+
 function showTransactionHistory(){
-    if (transactionCount === 0) {
+    if (transactionCount === 0){
         console.log("No transactions found\n");
         return;
     }
 
-    console.log("Customer's Transaction Receipt");
     for (let count = 0; count < transactionCount; count++){
         console.log("===========================================");
         console.log("Product: " + fuelHistory[count]);
@@ -129,4 +160,3 @@ function showTransactionHistory(){
         console.log("===========================================\n");
     }
 }
-
