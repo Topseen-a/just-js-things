@@ -16,7 +16,3 @@ console.log(userProfile)
 // for (value of userProfile.hobbies){
 //    console.log(value)
 // }
-// for (count in userProfile){
-//     console.log(userProfile[count])
-// }
-// console.log("Hello")
