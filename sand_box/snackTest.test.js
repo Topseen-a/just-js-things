@@ -132,5 +132,3 @@ test("for get student's name", ()=>{
     }
     expect(sum).toBe(totalQuantity)
  })
-
- test
