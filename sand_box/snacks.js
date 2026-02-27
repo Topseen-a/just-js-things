@@ -7,7 +7,6 @@ student = {
         zip: 10001,
     }
 }
-module.exports = {student}
 
 // 1
 console.log(student.name)
@@ -20,9 +19,8 @@ console.log(student.age)
 student.GPA = 3.8;
 console.log(student)
 function getDetails() {
-    console.log("John Doe is 23 years old and has a GPA of 3.8");
+    return "John Doe is 23 years old and has a GPA of 3.8";
 }
-getDetails()
 
 // 3
 bankAccount = {
@@ -40,13 +38,11 @@ bankAccount = {
     }
 }
 
-bankAccount.deposit(200);
-console.log(bankAccount.balance);
 
-bankAccount.withdraw(1000);
-console.log(bankAccount.balance)
+// bankAccount.withdraw(1000);
+// console.log(bankAccount.balance)
 
-console.log(bankAccount.balance);
+// console.log(bankAccount.balance);
 
 // 4
 const inventory = {
@@ -106,3 +102,5 @@ function findExpensiveProducts(products, threshold) {
     return expensiveProducts;
 }
 console.log(findExpensiveProducts(products, 700));
+
+module.exports = {student, getDetails, bankAccount, company, products, findExpensiveProducts};
