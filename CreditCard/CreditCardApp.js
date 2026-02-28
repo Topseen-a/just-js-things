@@ -1,15 +1,16 @@
 const prompt = require("prompt-sync")();
 
+function main() {
     let cardNumber = prompt("Enter your card number: ");
 
-    if (!isValidLength(cardNumber)){
+    if (!isValidLength(cardNumber)) {
         console.log("Invalid credit card length.");
         return;
     }
 
     let cardType = getCardType(cardNumber);
 
-    if (cardType === "Unknown"){
+    if (cardType === "Unknown") {
         console.log("Invalid card type.");
         return;
     }
@@ -20,28 +21,30 @@ const prompt = require("prompt-sync")();
 
     let isValid = isValidCard(cardNumber);
 
-    if (isValid){
+    if (isValid) {
         console.log("Credit Card Status: Valid");
-    } 
+    }
     else {
         console.log("Credit Card Status: Invalid");
     }
+}
 
-function isValidLength(cardNumber){
+
+function isValidLength(cardNumber) {
     return cardNumber.length >= 13 && cardNumber.length <= 16;
 }
 
-function getCardType(cardNumber){
-    if (cardNumber.startsWith("4")){
+function getCardType(cardNumber) {
+    if (cardNumber.startsWith("4")) {
         return "Visa Card";
     }
-    else if (cardNumber.startsWith("5")){
+    else if (cardNumber.startsWith("5")) {
         return "MasterCard";
     }
-    else if (cardNumber.startsWith("37")){
+    else if (cardNumber.startsWith("37")) {
         return "American Express Card";
     }
-    else if (cardNumber.startsWith("6")){
+    else if (cardNumber.startsWith("6")) {
         return "Discover Card";
     }
     else {
@@ -49,8 +52,8 @@ function getCardType(cardNumber){
     }
 }
 
-function getDigit(number){
-    if (number < 10){
+function getDigit(number) {
+    if (number < 10) {
         return number;
     }
     else {
@@ -58,27 +61,39 @@ function getDigit(number){
     }
 }
 
-function sumOfDoubleEvenPlace(cardNumber){
+function sumOfDoubleEvenPlace(cardNumber) {
     let sum = 0;
-    for (let count = cardNumber.length - 2; count >= 0; count -= 2){
+    for (let count = cardNumber.length - 2; count >= 0; count -= 2) {
         let digit = parseInt(cardNumber.charAt(count));
         sum += getDigit(digit * 2);
     }
     return sum;
 }
 
-function sumOfOddPlace(cardNumber){
+function sumOfOddPlace(cardNumber) {
     let sum = 0;
-    for (let count = cardNumber.length - 1; count >= 0; count -= 2){
+    for (let count = cardNumber.length - 1; count >= 0; count -= 2) {
         sum += parseInt(cardNumber.charAt(count));
     }
     return sum;
 }
 
-function isValidCard(cardNumber){
+function isValidCard(cardNumber) {
     let sumEven = sumOfDoubleEvenPlace(cardNumber);
     let sumOdd = sumOfOddPlace(cardNumber);
     return (sumEven + sumOdd) % 10 === 0;
 }
 
-module.exports = {isValidLength, getCardType, getDigit, sumOfDoubleEvenPlace, sumOfOddPlace, isValidCard};
+
+if (require.main === module) {
+    main();
+}
+
+module.exports = {
+    isValidLength,
+    getCardType,
+    getDigit,
+    sumOfDoubleEvenPlace,
+    sumOfOddPlace,
+    isValidCard
+};
