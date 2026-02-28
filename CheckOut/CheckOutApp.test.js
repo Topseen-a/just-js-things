@@ -1,4 +1,4 @@
-const {calculateDiscount, calculateVat, calculateTotalBill} = require("./CheckOut");
+const {calculateDiscount, calculateVat, calculateTotalBill} = require("./CheckOutApp");
 
 test ("for calculate discount", ()=>{
     let result = calculateDiscount(1000, 10);
