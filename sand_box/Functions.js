@@ -1,65 +1,65 @@
 // Function declaration
 
-// function add() {
-//     console.log(2+2)
+function add() {
+    console.log(2+2)
 
-// }
-// add();
+}
+add();
 
 // Function expression
 
-// const subtract = function() {
-//     console.log(4-2)
-// }
-// subtract();
+const subtractNumbers = function() {
+    console.log(4-2)
+}
+subtractNumbers();
 
-//Arrow functions
+// Arrow functions
 
-// let smallerNumber = 4;
-// let largerNumber = 8;
+let smallerNumber = 4;
+let largerNumber = 8;
 
-// const subtract = (firstNumber, secondNumber) => {
-//     return firstNumber - secondNumber;
-// }
-// console.log(subtract(largerNumber, smallerNumber))
+const subtract = (firstNumber, secondNumber) => {
+    return firstNumber - secondNumber;
+}
+console.log(subtract(largerNumber, smallerNumber))
 
-//Nested Funcitons
+// Nested Funcitons
 
-// function nestFunctions(param) {
+function nestFunctions(param) {
 
-//     let number = 7;
+    let number = 7;
 
-    // function add(paramOne) {
-    //     let sum = number + paramOne;
-    //     return sum;
-    // }
+    function add(paramOne) {
+        let sum = number + paramOne;
+        return sum;
+    }
 
-    // function subtract(paramTwo) {
-    //     let difference = number - paramTwo;
-    //     return difference;
-    // }
+    function subtract(paramTwo) {
+        let difference = number - paramTwo;
+        return difference;
+    }
 
-    // function multiply(paramThree) {
-    //     let product = number * paramThree;
-    //     return product;
-    // }
+    function multiply(paramThree) {
+        let product = number * paramThree;
+        return product;
+    }
 
-    // return {
-    //     sum: add(param),
-    //     difference: subtract(param),
-    //     product: multiply(param)
-    // }
+    return {
+        sum: add(param),
+        difference: subtract(param),
+        product: multiply(param)
+    }
 
-//     return {
-//         sum: ()=> number + param,
-//         difference: ()=> number - param,
-//         product: ()=> number * param
-//     }
-// }
+    return {
+        sum: ()=> number + param,
+        difference: ()=> number - param,
+        product: ()=> number * param
+    }
+}
 
-// let result = nestFunctions(6);
-// console.log(result)
-// console.log(result.sum())
+let result = nestFunctions(6);
+console.log(result)
+console.log(result.sum())
 
 // Call Back Functions
 
@@ -81,3 +81,22 @@ function getEvenNumbers(numbers) {
 
 console.log(manipulateArray(arrayOfNumbers, getEvenNumbers))
 
+function addTwo(array) {
+    let newArray = [];
+    array.forEach((element) => {
+        let answer = element + 2;
+        newArray.push(answer);
+    });
+    return newArray;
+}
+
+const multiplyByTwo = (numbers)=>{
+    let result = numbers.map((number)=>(number * 2));
+    return result;
+}
+
+function getEvenNumbers(array) {
+    return array.filter((number)=>(number % 2 === 0));
+}
+
+module.exports = {addTwo, multiplyByTwo, getEvenNumbers}
